@@ -30,9 +30,11 @@ Generate a default YAML fixture file with the rake command:
 rake maskara:generate
 ```
 
-(The file defaults to RAILS_ROOT/db/fixtures/maskara.yml )
+(The file defaults to RAILS_ROOT/db/fixtures/maskara.yml)
 
-Edit the file with information about the objects your template needs (and filters you wish to disable) and then prepend `/maskara/` to the path you'd normally use to access the view: eg.
+Edit the file with information about the objects your template needs (and filters you wish to disable). ([The example in the test directory](spec/dummy/db/fixtures/maskara.yml) demonstrates the sort of options that are available.)
+
+Then, after restarting Rails, prepend `/maskara/` to the path you'd normally use to access the view: eg.
 
 ```http://localhost:3000/member/edit/1```
 
