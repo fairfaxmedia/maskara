@@ -1,0 +1,18 @@
+controllers:
+  home:
+    skip_filters:
+      - polluter
+    home_defaults: &HOME_DEFAULTS
+      actor:
+        name: Tom Hardy
+    actions:
+      main:
+        <<: *HOME_DEFAULTS
+        user:
+          name: Simon
+          email: simon.hildebrandt@fairfaxmedia.com.au
+  "mod/sub":
+    actions:
+      remote:
+        kebab:
+          flavour: delicious
