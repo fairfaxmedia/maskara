@@ -1,7 +1,21 @@
 class Maskara::Data
   class << self
+    def data_file
+      Maskara.configuration.data_file
+    end
+
     def data
-      @data ||= YAML.load_file(Maskara.configuration.data_file) || {}
+      @data ||= load_data
+    end
+
+    def load_data
+      begin
+        return YAML.load(open(data_file).read)
+      rescue Errno::ENOENT
+      rescue Psych::SyntaxError
+        puts "Invalid YAML found in Maskara data file at #{data_file}"
+      end
+      {}
     end
 
     def controllers_data

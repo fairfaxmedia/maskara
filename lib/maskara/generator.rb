@@ -15,6 +15,8 @@ class Maskara::Generator
     end
 
     def write_example_data_file
+      FileUtils.mkdir_p(Maskara.configuration.data_path)
+
       File.open(data_file, 'w') do |file|
         YAML.dump(clean_controller_data, file)
       end

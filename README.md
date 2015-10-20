@@ -1,8 +1,9 @@
 # Maskara
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/maskara`. To experiment with that code, run `bin/console` for an interactive prompt.
+Maskara is designed to take the pain out of frontend development (primarily for Rails, but it tries to be platform agnostic.)
 
-TODO: Delete this and the text above, and describe your gem
+It encourages developers and frontend designers to collaboratively mock out actions with fixture data, and then to use special URLs to access those actions - this allows easier testing of heavy (or incomplete) actions, and quick prototyping, with the entire Rails view stack still available.
+
 
 ## Installation
 
@@ -20,9 +21,27 @@ Or install it yourself as:
 
     $ gem install maskara
 
+
 ## Usage
 
-TODO: Write usage instructions here
+Generate a default YAML fixture file with the rake command:
+
+```
+rake maskara:generate
+```
+
+(The file defaults to RAILS_ROOT/db/fixtures/maskara.yml )
+
+Edit the file with information about the objects your template needs (and filters you wish to disable) and then prepend `/maskara/` to the path you'd normally use to access the view: eg.
+
+```http://localhost:3000/member/edit/1```
+
+would become...
+
+```http://localhost:3000/maskara/member/edit/1```
+
+Instead of running the controller action, the data form the fixture file should be loaded into the controller and a normal render call executed.
+
 
 ## Development
 
@@ -32,10 +51,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/maskara.
+Bug reports and pull requests are welcome on GitHub at https://bitbucket.org/simon_hildebrandt/maskara.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
