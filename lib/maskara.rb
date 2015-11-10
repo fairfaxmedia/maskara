@@ -20,7 +20,7 @@ module Maskara
       'maskara.yml'
     end
   end
-
+  
   class << self
     attr_writer :configuration
 

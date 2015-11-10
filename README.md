@@ -34,6 +34,12 @@ rake maskara:generate
 
 Edit the file with information about the objects your template needs (and filters you wish to disable). ([The example in the test directory](spec/dummy/db/fixtures/maskara.yml) demonstrates the sort of options that are available.)
 
+Maskara can use Rack middleware to identify maskara requests (this is the easiest way to employ it) so here's how you include it in your application.rb:
+
+```
+config.middleware.insert_after Rails::Rack::Logger, Maskara::Middleware
+```
+
 Then, after restarting Rails, prepend `/maskara/` to the path you'd normally use to access the view: eg.
 
 ```http://localhost:3000/member/edit/1```

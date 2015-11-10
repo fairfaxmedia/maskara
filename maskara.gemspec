@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Mask out your controller logic with mock data to make building views easier.}
   spec.description   = %q{Mask out your controller logic with mock data to make building views easier.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://bitbucket.org/fairfax/maskara"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
