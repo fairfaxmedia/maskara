@@ -42,11 +42,15 @@ config.middleware.insert_after Rails::Rack::Logger, Maskara::Middleware
 
 Then, after restarting Rails, prepend `/maskara/` to the path you'd normally use to access the view: eg.
 
-```http://localhost:3000/member/edit/1```
+```
+http://localhost:3000/member/edit/1
+```
 
 would become...
 
-```http://localhost:3000/maskara/member/edit/1```
+```
+http://localhost:3000/maskara/member/edit/1
+```
 
 Instead of running the controller action, the data form the fixture file should be loaded into the controller and a normal render call executed.
 
