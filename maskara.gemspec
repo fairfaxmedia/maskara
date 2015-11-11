@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Mask out your controller logic with mock data to make building views easier.}
   spec.description   = %q{Mask out your controller logic with mock data to make building views easier.}
-  spec.homepage      = "https://bitbucket.org/fairfax/maskara"
+  spec.homepage      = "https://github.com/fairfaxmedia/maskara"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
